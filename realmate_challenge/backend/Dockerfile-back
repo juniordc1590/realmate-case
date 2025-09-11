@@ -1,0 +1,14 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+RUN pip install poetry
+
+# Copia arquivos essenciais para instalação
+COPY pyproject.toml poetry.lock* README.md /app/
+
+# Instala dependências
+RUN poetry install --no-root
+
+# Copia o restante do backend
+COPY . /app
