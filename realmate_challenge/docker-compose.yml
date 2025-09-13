@@ -32,7 +32,6 @@ services:
     command: npm run dev
     volumes:
       - ./frontend:/app
-      - /app/node_modules
     ports:
       - "8000:5173"
 
